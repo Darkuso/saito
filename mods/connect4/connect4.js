@@ -182,3 +182,12 @@ return checkVerticals() ||
   checkDiagonalBLtoTR() ||
   checkDiagonalTLtoBR();
 }}
+
+///////////////
+// webServer //
+///////////////
+
+Connect4.prototype.webServer = function webServer(app, expressapp) {
+   
+  expressapp.use('/connect4', express.static(__dirname + '/web/'));
+};
