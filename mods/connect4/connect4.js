@@ -183,3 +183,25 @@ return checkVerticals() ||
   checkDiagonalBLtoTR() ||
   checkDiagonalTLtoBR();
 }}
+///////////////
+// webServer //
+///////////////
+
+Connect4.prototype.webServer = function webServer(app, expressapp) {
+
+  expressapp.use('/connect4', express.static(__dirname + '/web/'));
+
+    expressapp.get('/connect4/', (req, res) => {
+      res.sendFile(__dirname + '/web/index.html');
+      return;
+    });
+    expressapp.get('/connect4/style.css', (req, res) => {
+      res.sendFile(__dirname + '/web/style.css');
+      return;
+    });
+    expressapp.get('/connect4/main', (req, res) => {
+      res.sendFile(__dirname + '/web/main.js');
+      return;
+    });
+    
+  }
