@@ -189,8 +189,6 @@ return checkVerticals() ||
 
 Connect4.prototype.webServer = function webServer(app, expressapp) {
 
-  expressapp.use('/connect4', express.static(__dirname + '/web/'));
-
     expressapp.get('/connect4/', (req, res) => {
       res.sendFile(__dirname + '/web/index.html');
       return;
@@ -204,4 +202,4 @@ Connect4.prototype.webServer = function webServer(app, expressapp) {
       return;
     });
     
-  }
+  
